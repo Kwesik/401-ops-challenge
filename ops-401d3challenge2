@@ -13,8 +13,8 @@ from email.mime.multipart import MIMEMultipart
 
 ip = "8.8.8.8" 
 response = os.system("ping " + ip)
-sender_email = "kkeller85@gmail.com"
-receiver_email = "kkeller85@gmail.com"
+sender_email = "email.com"
+receiver_email = "email.com"
 password = input("Type your password and press enter:")
 
 message = MIMEMultipart("alternative")
