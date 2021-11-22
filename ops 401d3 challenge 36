@@ -1,0 +1,40 @@
+#!/usr/bin/env python
+###Import Library###
+import os, time
+import subprocess
+
+
+#script Name: Ops401challenge36
+#Author: Kwesi Keller
+#Date: 11/22/2021
+#Description of purpose: Banner grabbing
+#Declaration of variable
+
+#nmap banner grabbing
+ip_address = input("Enter ip")
+port_num = input("Enter port number")
+
+#Main
+process = subprocess.Popen(["nmap", "-sV", ip_address])
+try:
+    process.wait(timeout=2)
+except:
+    process.kill()
+
+#telnet banner grabbing
+
+process2 = subprocess.Popen(["telnet", ip_address, port_num])
+try:
+    process2.wait(timeout=2)
+except:
+    process2.kill()
+
+#netcat banner grabbing
+
+process3 = subprocess.Popen(["nc", ip_address, port_num])
+try:
+    process3.wait(timeout=2)
+except:
+    process3.kill()
+
+#End
